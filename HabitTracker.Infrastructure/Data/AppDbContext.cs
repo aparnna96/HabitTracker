@@ -60,7 +60,7 @@ namespace HabitTracker.Infrastructure.Data
                     entity.HasOne(h => h.Category)
                        .WithMany(c => c.Habits)
                        .HasForeignKey(h => h.CategoryId)
-                       .OnDelete(DeleteBehavior.SetNull);
+                       .OnDelete(DeleteBehavior.NoAction);
                 });
 
                 modelBuilder.Entity<HabitLog>(entity =>
